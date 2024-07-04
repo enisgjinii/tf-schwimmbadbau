@@ -4,14 +4,12 @@ function isActive($page)
     $current_page = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
     return strtolower($current_page) === strtolower($page) ? 'active' : '';
 }
-
 function isDropdownActive($pages)
 {
     $current_page = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
     return in_array(strtolower($current_page), array_map('strtolower', $pages)) ? 'active' : '';
 }
 ?>
-
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
     <a href="index.php" class="navbar-brand p-0 d-flex align-items-center">
@@ -30,6 +28,7 @@ function isDropdownActive($pages)
             <a href="about.php" class="nav-item nav-link <?php echo isActive('about.php'); ?>">Über uns</a>
             <!-- Portfolio -->
             <a href="portfolio.php" class="nav-item nav-link <?php echo isActive('portfolio.php'); ?>">Portfolio</a>
+            <a href="planung.php" class="nav-item nav-link <?php echo isActive('planung.php'); ?>">Planung</a>
             <a href="service.php" class="nav-item nav-link <?php echo isActive('service.php'); ?>">Leistungen</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle <?php echo isDropdownActive(['team.php', 'membership.php', 'visiting.php', 'testimonial.php', '404.php']); ?>" data-bs-toggle="dropdown">Seiten</a>
