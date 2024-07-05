@@ -1,9 +1,12 @@
-
 /********** Template CSS **********/
 :root {
     --primary: #80b1d9;
     --light: #F3F4F5;
     --dark: #282F34;
+    --timeline-bg: #e0f0ff;
+    --timeline-point: #80b1d9;
+    --timeline-content-bg: #ffffff;
+    --text-color: #333333;
 }
 
 .back-to-top {
@@ -13,7 +16,6 @@
     bottom: 45px;
     z-index: 99;
 }
-
 
 /*** Spinner ***/
 #spinner {
@@ -28,7 +30,6 @@
     visibility: visible;
     opacity: 1;
 }
-
 
 /*** Button ***/
 .btn {
@@ -66,7 +67,6 @@
     justify-content: center;
     font-weight: normal;
 }
-
 
 /*** Navbar ***/
 .navbar.sticky-top {
@@ -108,7 +108,7 @@
 }
 
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
+    .navbar .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
@@ -141,7 +141,6 @@
         opacity: 1;
     }
 }
-
 
 /*** Header ***/
 .header-bg {
@@ -310,10 +309,9 @@
     border-color: var(--primary);
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
-
 
 /*** Img Border ***/
 .img-border {
@@ -340,7 +338,6 @@
     height: calc(100% - 3rem);
     object-fit: cover;
 }
-
 
 /*** Facts & Visiting Hours ***/
 .facts {
@@ -375,7 +372,6 @@
     border: none;
 }
 
-
 /*** Animal ***/
 .animal-item {
     position: relative;
@@ -402,7 +398,6 @@
     padding-bottom: 20px !important;
 }
 
-
 /*** Membership ***/
 .membership-item {
     padding: 45px 30px;
@@ -424,7 +419,6 @@
     color: transparent;
     -webkit-text-stroke: 2px var(--primary);
 }
-
 
 /*** Testimonial ***/
 .testimonial-carousel::before {
@@ -450,6 +444,7 @@
 }
 
 @media (min-width: 768px) {
+
     .testimonial-carousel::before,
     .testimonial-carousel::after {
         width: 200px;
@@ -457,6 +452,7 @@
 }
 
 @media (min-width: 992px) {
+
     .testimonial-carousel::before,
     .testimonial-carousel::after {
         width: 300px;
@@ -485,7 +481,7 @@
 
 .testimonial-carousel .owl-item.center .testimonial-item img {
     border-color: var(--primary) !important;
-} 
+}
 
 .testimonial-carousel .owl-nav {
     position: absolute;
@@ -517,7 +513,6 @@
 .testimonial-carousel .owl-nav .owl-next:hover {
     color: var(--dark);
 }
-
 
 /*** Footer ***/
 .footer {
@@ -579,4 +574,122 @@
 
 .footer .copyright a:hover {
     color: var(--primary);
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--timeline-bg);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 1;
+}
+
+.timeline-step {
+    padding: 20px 40px;
+    position: relative;
+    background: inherit;
+    width: 50%;
+}
+
+.timeline-step::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: -15px;
+    background-color: white;
+    border: 4px solid var(--timeline-point);
+    top: 20px;
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.timeline-step:hover::after {
+    transform: scale(1.2);
+    background-color: var(--primary-color);
+}
+
+.timeline-left {
+    left: 0;
+}
+
+.timeline-right {
+    left: 50%;
+}
+
+.timeline-right::after {
+    left: -15px;
+}
+
+.timeline-content {
+    padding: 30px;
+    background-color: var(--timeline-content-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 5px solid var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-content h4 {
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.timeline-content img,
+.timeline-content video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+} */
+
+/* .btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+} */
+
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-step {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-step::after {
+        left: 15px;
+    }
+
+    .timeline-right {
+        left: 0;
+    }
 }

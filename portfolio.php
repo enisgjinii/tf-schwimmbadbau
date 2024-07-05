@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title>Portfolio</title>
@@ -23,7 +24,10 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.15/dist/sweetalert2.min.css" rel="stylesheet" />
+
 </head>
+
 <body>
   <!-- Spinner Start -->
   <?php include 'partials/spinner.php'; ?>
@@ -58,30 +62,22 @@
             'title' => 'Ausstellungsgarten',
             'description' => 'Garten mit Sauna und Schwimmbad mit Holzabdeckung'
           ],
-          // Add more items as needed
           [
             'image' => 'portfolio-2.jpg',
             'title' => 'BV: Zeitlarn - Pool im Garten',
             'description' => ''
           ],
           [
-            // Zeitlarn
-            // Gartenanlage mit Pool
             'image' => 'portfolio-3.jpg',
             'title' => 'Zeitlarn',
             'description' => 'Gardenanlage mit Pool.'
           ],
           [
-            //             Hundertwasserturm in Abensberg
-            // Hunderwasserturm
-            // und Kunsthaus in Abensberg
             'image' => 'portfolio-4.jpg',
             'title' => 'Hundertwasserturm in Abensberg',
             'description' => 'Hundertwasserturm und Kunsthaus in Abensberg.'
           ],
           [
-            //             Wasser im Garten
-            // Pools - Schwimmteiche - Wasserspiele
             'image' => 'portfolio-5.jpg',
             'title' => 'Wasser im Garten',
             'description' => 'Pools - Schwimmteiche - Wasserspiele.'
@@ -136,12 +132,17 @@
         ?>
           <!-- Portfolio Item Start -->
           <div class="col-lg-3 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="<?= $delay ?>s">
-            <div class="card">
-              <img class="card-img-top" src="<?= $imagePath ?>" alt="<?= $title ?>">
-              <div class="card-body">
+            <div class="card h-100 d-flex flex-column">
+              <img class="card-img-top" src="<?= $imagePath ?>" alt="<?= $title ?>" style="object-fit: cover; height: 200px;">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title"><?= $title ?></h5>
-                <p class="card-text"><?= $description ?></p>
-                <a href="<?= $imagePath ?>" class="btn btn-primary" data-lightbox="portfolio">Read More</a>
+                <p class="card-text flex-grow-1"><?= $description ?: 'No description available' ?></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="<?= $imagePath ?>" class="btn btn-primary mt-auto w-75 mx-1" style="border-radius: 8px;">Read More</a>
+                  <a href="<?= $imagePath ?>" data-lightbox="portfolio" class="btn btn-primary mt-auto w-25" style="border-radius: 8px;">
+                    <i class="bi bi-eye-fill"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -169,5 +170,45 @@
   <script src="lib/lightbox/js/lightbox.min.js"></script>
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
+  ]<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    $(document).ready(function() {
+      $('#contactForm').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+          url: 'send_email.php',
+          method: 'POST',
+          data: $(this).serialize(),
+          dataType: 'json',
+          success: function(response) {
+            if (response.success) {
+              Swal.fire({
+                icon: 'success',
+                title: 'Erfolg',
+                text: response.message,
+              });
+              // Optional: Reset the form after successful submission
+              $('#contactForm')[0].reset();
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Fehler',
+                text: response.message,
+              });
+            }
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Fehler',
+              text: 'Ein Fehler ist beim Senden der Nachricht aufgetreten. Bitte versuchen Sie es später erneut.',
+            });
+            console.error('AJAX error:', textStatus, errorThrown);
+          }
+        });
+      });
+    });
+  </script>
 </body>
+
 </html>
