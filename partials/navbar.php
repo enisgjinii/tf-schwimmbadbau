@@ -29,6 +29,7 @@ function isDropdownActive($pages)
             <!-- Portfolio -->
             <a href="portfolio.php" class="nav-item nav-link <?php echo isActive('portfolio.php'); ?>">Portfolio</a>
             <a href="planung.php" class="nav-item nav-link <?php echo isActive('planung.php'); ?>">Planung</a>
+            <a href="poolandspaproducts.php" class="nav-item nav-link <?php echo isActive('poolandspaproducts.php'); ?>">Pool & SPA</a>
             <a href="service.php" class="nav-item nav-link <?php echo isActive('service.php'); ?>">Leistungen</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle <?php echo isDropdownActive(['team.php', 'membership.php', 'visiting.php', 'testimonial.php', '404.php']); ?>" data-bs-toggle="dropdown">Seiten</a>
