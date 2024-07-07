@@ -1,12 +1,23 @@
 <?php
-function isActive($page)
+function getActiveClass($page)
 {
     $current_page = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+
+    if ($current_page === '') {
+        $current_page = 'index.php';
+    }
+
     return strtolower($current_page) === strtolower($page) ? 'active' : '';
 }
-function isDropdownActive($pages)
+
+function getDropdownActiveClass($pages)
 {
     $current_page = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+
+    if ($current_page === '') {
+        $current_page = 'index.php';
+    }
+
     return in_array(strtolower($current_page), array_map('strtolower', $pages)) ? 'active' : '';
 }
 ?>
@@ -24,26 +35,28 @@ function isDropdownActive($pages)
     </button>
     <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
         <div class="navbar-nav ms-auto">
-            <a href="index.php" class="nav-item nav-link <?php echo isActive('index.php'); ?>">Home</a>
-            <a href="about.php" class="nav-item nav-link <?php echo isActive('about.php'); ?>">Über uns</a>
+            <a href="index.php" class="nav-item nav-link <?php echo getActiveClass('index.php'); ?>">Home</a>
+            <a href="about.php" class="nav-item nav-link <?php echo getActiveClass('about.php'); ?>">Über uns</a>
             <!-- Portfolio -->
-            <a href="portfolio.php" class="nav-item nav-link <?php echo isActive('portfolio.php'); ?>">Portfolio</a>
-            <a href="planung.php" class="nav-item nav-link <?php echo isActive('planung.php'); ?>">Planung</a>
-            <a href="poolandspaproducts.php" class="nav-item nav-link <?php echo isActive('poolandspaproducts.php'); ?>">Pool & SPA</a>
-            <a href="service.php" class="nav-item nav-link <?php echo isActive('service.php'); ?>">Leistungen</a>
+            <a href="portfolio.php" class="nav-item nav-link <?php echo getActiveClass('portfolio.php'); ?>">Portfolio</a>
+            <a href="planung.php" class="nav-item nav-link <?php echo getActiveClass('planung.php'); ?>">Planung</a>
+            <a href="poolandspaproducts.php" class="nav-item nav-link <?php echo getActiveClass('poolandspaproducts.php'); ?>">Pool & SPA</a>
+            <!-- Impressum und Links -->
+            <a href="impressum.php" class="nav-item nav-link <?php echo getActiveClass('impressum.php'); ?>">Impressum und Links</a>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle <?php echo isDropdownActive(['team.php', 'membership.php', 'visiting.php', 'testimonial.php', '404.php']); ?>" data-bs-toggle="dropdown">Seiten</a>
+                <a href="#" class="nav-link dropdown-toggle <?php echo getDropdownActiveClass(['team.php', 'membership.php', 'visiting.php', 'testimonial.php', '404.php']); ?>" data-bs-toggle="dropdown">Seiten</a>
                 <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                    <a href="team.php" class="dropdown-item <?php echo isActive('team.php'); ?>">Unsere Tiere</a>
-                    <a href="membership.php" class="dropdown-item <?php echo isActive('membership.php'); ?>">Mitgliedschaft</a>
-                    <a href="visiting.php" class="dropdown-item <?php echo isActive('visiting.php'); ?>">Öffnungszeiten</a>
-                    <a href="testimonial.php" class="dropdown-item <?php echo isActive('testimonial.php'); ?>">Referenzen</a>
-                    <a href="404.php" class="dropdown-item <?php echo isActive('404.php'); ?>">404 Seite</a>
+                    <a href="service.php" class="dropdown-item <?php echo getActiveClass('service.php'); ?>">Leistungen</a>
+                    <a href="team.php" class="dropdown-item <?php echo getActiveClass('team.php'); ?>">Unsere Tiere</a>
+                    <a href="membership.php" class="dropdown-item <?php echo getActiveClass('membership.php'); ?>">Mitgliedschaft</a>
+                    <a href="visiting.php" class="dropdown-item <?php echo getActiveClass('visiting.php'); ?>">Öffnungszeiten</a>
+                    <a href="testimonial.php" class="dropdown-item <?php echo getActiveClass('testimonial.php'); ?>">Referenzen</a>
+                    <a href="404.php" class="dropdown-item <?php echo getActiveClass('404.php'); ?>">404 Seite</a>
                 </div>
             </div>
-            <a href="contact.php" class="nav-item nav-link <?php echo isActive('contact.php'); ?>">Kontakt</a>
+            <a href="contact.php" class="nav-item nav-link <?php echo getActiveClass('contact.php'); ?>">Kontakt</a>
         </div>
-        <a href="" class="btn btn-primary">Ticket kaufen<i class="fa fa-arrow-right ms-3"></i></a>
+        <!-- <a href="" class="btn btn-primary">Ticket kaufen<i class="fa fa-arrow-right ms-3"></i></a> -->
     </div>
 </nav>
 <!-- Navbar End -->

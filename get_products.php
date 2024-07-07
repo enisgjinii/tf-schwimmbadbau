@@ -10,7 +10,8 @@ $products = [
             "Schnelles und rückstandsfreies lösliches Pulver",
             "Kompatibel mit allen Filtertypen"
         ],
-        "image" => "img/products/product-1.jpg"
+        "image" => "img/products/product-1.jpg",
+        "category" => "pH-Regulierung"
     ],
     [
         "id" => 2,
@@ -283,8 +284,18 @@ $products = [
         "image" => "img/products/product-27.jpg"
     ]
 ];
-if (isset($_GET['action']) && $_GET['action'] === 'getProducts') {
+$categories = array_unique(array_column($products, 'category'));
+if (isset($_GET['action'])) {
     header('Content-Type: application/json');
-    echo json_encode($products);
+    switch ($_GET['action']) {
+        case 'getProducts':
+            echo json_encode($products);
+            break;
+        case 'getCategories':
+            echo json_encode($categories);
+            break;
+        default:
+            echo json_encode(['error' => 'Invalid action']);
+    }
     exit;
 }
