@@ -1,7 +1,6 @@
 <?php include 'get_products.php'; ?>
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="utf-8" />
   <title>Pool und SPA Pflege Produkte</title>
@@ -27,19 +26,16 @@
     .fade-in {
       animation: fadeIn 0.5s;
     }
-
     @keyframes fadeIn {
       from {
         opacity: 0;
       }
-
       to {
         opacity: 1;
       }
     }
   </style>
 </head>
-
 <body>
   <?php include 'partials/spinner.php'; ?>
   <?php include 'partials/toopbar.php'; ?>
@@ -47,17 +43,11 @@
   <!-- Page Header Start -->
   <div class="container-fluid header-bg py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
-      <h1 class="display-4 text-white mb-3 animated slideInDown">
-        Pool und SPA Pflege bei uns erhältlich
-      </h1>
+      <h1 class="display-4 text-white mb-3 animated slideInDown">Pool und SPA Pflege bei uns erhältlich</h1>
       <nav aria-label="breadcrumb animated slideInDown">
         <ol class="breadcrumb mb-0">
-          <li class="breadcrumb-item">
-            <a class="text-white" href="#">Startseite</a>
-          </li>
-          <li class="breadcrumb-item text-primary active" aria-current="page">
-            Pool und SPA Pflege bei uns erhältlich
-          </li>
+          <li class="breadcrumb-item"><a class="text-white" href="#">Startseite</a></li>
+          <li class="breadcrumb-item text-primary active" aria-current="page">Pool und SPA Pflege bei uns erhältlich</li>
         </ol>
       </nav>
     </div>
@@ -124,134 +114,114 @@
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
   <script>
-    $(document).ready(function() {
-      let allProducts = [];
-      let categories = [];
-      let currentPage = 1;
-      const productsPerPage = 12;
-
-      // Load products and categories
-      $.getJSON('?action=getProducts', function(data) {
-        allProducts = data;
-        displayProducts(allProducts, currentPage);
-        updatePagination(allProducts.length);
-      });
-
-      $.getJSON('?action=getCategories', function(data) {
-        categories = data;
-        const categoryFilter = $('#categoryFilter');
-        categories.forEach(category => {
-          categoryFilter.append(`<option value="${category}">${category}</option>`);
+    $(document).ready(() => {
+      const state = {
+        allProducts: [],
+        categories: [],
+        currentPage: 1,
+        productsPerPage: 12
+      };
+      const elements = {
+        productList: $('#productList'),
+        searchInput: $('#searchInput'),
+        categoryFilter: $('#categoryFilter'),
+        pagination: $('#pagination')
+      };
+      const init = async () => {
+        try {
+          const [products, categories] = await Promise.all([
+            $.getJSON('get_products.php?action=getProducts'),
+            $.getJSON('get_products.php?action=getCategories')
+          ]);
+          state.allProducts = products;
+          state.categories = categories;
+          populateCategoryFilter();
+          displayProducts();
+          setupEventListeners();
+        } catch (error) {
+          console.error('Error initializing:', error);
+        }
+      };
+      const populateCategoryFilter = () => {
+        state.categories.forEach(category => {
+          elements.categoryFilter.append(`<option value="${category}">${category}</option>`);
         });
-      });
-
-      // Search and filter functionality
-      $('#searchForm').on('submit', function(e) {
-        e.preventDefault();
-        currentPage = 1;
-        filterProducts();
-      });
-
-      $('#categoryFilter').on('change', function() {
-        currentPage = 1;
-        filterProducts();
-      });
-
-      // Reset filters
-      $('#resetFilters').on('click', function() {
-        $('#searchInput').val('');
-        $('#categoryFilter').val('');
-        currentPage = 1;
-        displayProducts(allProducts, currentPage);
-        updatePagination(allProducts.length);
-      });
-
-      function filterProducts() {
-        const searchTerm = $('#searchInput').val().toLowerCase();
-        const selectedCategory = $('#categoryFilter').val();
-
-        const filteredProducts = allProducts.filter(product =>
+      };
+      const setupEventListeners = () => {
+        elements.searchInput.on('keyup', () => filterProducts());
+        $('#searchForm').on('submit', e => {
+          e.preventDefault();
+          filterProducts();
+        });
+        elements.categoryFilter.on('change', () => filterProducts());
+        $('#resetFilters').on('click', resetFilters);
+        elements.productList.on('click', '.view-details', e => viewDetails($(e.target).data('product-id')));
+      };
+      const filterProducts = () => {
+        const searchTerm = elements.searchInput.val().toLowerCase();
+        const selectedCategory = elements.categoryFilter.val();
+        const filteredProducts = state.allProducts.filter(product =>
           (product.name.toLowerCase().includes(searchTerm) ||
             product.description.toLowerCase().includes(searchTerm)) &&
-          (selectedCategory === "" || product.category === selectedCategory)
+          (!selectedCategory || product.category === selectedCategory)
         );
-
-        displayProducts(filteredProducts, currentPage);
-        updatePagination(filteredProducts.length);
-      }
-
-      // Display products with animation and lazy loading
-      function displayProducts(products, page) {
-        const productList = $('#productList');
-        productList.empty();
-
-        const start = (page - 1) * productsPerPage;
-        const end = start + productsPerPage;
-        const paginatedProducts = products.slice(start, end);
-
+        state.currentPage = 1;
+        displayProducts(filteredProducts);
+      };
+      const displayProducts = (products = state.allProducts) => {
+        elements.productList.empty();
+        const start = (state.currentPage - 1) * state.productsPerPage;
+        const paginatedProducts = products.slice(start, start + state.productsPerPage);
         if (paginatedProducts.length === 0) {
-          productList.append('<div class="col-12 text-center"><h3>Keine Produkte gefunden</h3></div>');
+          elements.productList.append('<div class="col-12 text-center"><h3>Keine Produkte gefunden</h3></div>');
         } else {
-          paginatedProducts.forEach(product => {
-            productList.append(`
-          <div class="col-md-3 mb-3 fade-in">
-            <div class="card h-100">
-              <img src="${product.image}" class="card-img-top lazy" alt="${product.name}" loading="lazy">
-              <div class="card-body">
-                <h5 class="card-title">${product.name}</h5>
-                <p class="card-text">${product.description}</p>
-                <p class="card-text"><small class="text-muted">${product.category}</small></p>
-              </div>
-              <div class="card-footer">
-                <button class="btn btn-primary view-details" data-product-id="${product.id}">Details</button>
-              </div>
-            </div>
-          </div>
-        `);
-          });
+          paginatedProducts.forEach(renderProduct);
         }
-      }
-
-      // Update pagination
-      function updatePagination(totalProducts) {
-        const totalPages = Math.ceil(totalProducts / productsPerPage);
-        const pagination = $('#pagination');
-        pagination.empty();
-
+        updatePagination(products.length);
+      };
+      const renderProduct = product => {
+        elements.productList.append(`
+      <div class="col-md-3 mb-3 fade-in">
+        <div class="card h-100">
+          <img src="${product.image}" class="card-img-top lazy" alt="${product.name}" loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">${product.name}</h5>
+            <p class="card-text">${product.description}</p>
+            <p class="card-text"><small class="text-muted">${product.category}</small></p>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary view-details" data-product-id="${product.id}">Details</button>
+          </div>
+        </div>
+      </div>
+    `);
+      };
+      const updatePagination = totalProducts => {
+        elements.pagination.empty();
+        const totalPages = Math.ceil(totalProducts / state.productsPerPage);
         if (totalPages > 1) {
           for (let i = 1; i <= totalPages; i++) {
-            pagination.append(`<li class="page-item ${i === currentPage ? 'active' : ''}"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`);
+            elements.pagination.append(`<li class="page-item ${i === state.currentPage ? 'active' : ''}"><a class="page-link" href="#">${i}</a></li>`);
           }
+          elements.pagination.find('a').on('click', e => {
+            e.preventDefault();
+            state.currentPage = parseInt($(e.target).text());
+            displayProducts();
+          });
         }
-      }
-
-      // Handle pagination clicks
-      $(document).on('click', '.page-link', function(e) {
-        e.preventDefault();
-        currentPage = parseInt($(this).data('page'));
-        filterProducts();
-      });
-
-      // Show product details
-      $(document).on('click', '.view-details', function() {
-        const productId = $(this).data('product-id');
-        const product = allProducts.find(p => p.id === productId);
-        const modal = $('#productModal');
-        modal.find('.modal-title').text(product.name);
-        modal.find('.modal-body').html(`
-      <img src="${product.image}" class="img-fluid mb-3" alt="${product.name}">
-      <p><strong>Beschreibung:</strong> ${product.description}</p>
-      <p><strong>Anwendung:</strong> ${product.usage}</p>
-      <p><strong>Kategorie:</strong> ${product.category}</p>
-      <strong>Eigenschaften:</strong>
-      <ul>
-        ${product.features.map(feature => `<li>${feature}</li>`).join('')}
-      </ul>
-    `);
-        modal.modal('show');
-      });
+      };
+      const resetFilters = () => {
+        elements.searchInput.val('');
+        elements.categoryFilter.val('');
+        state.currentPage = 1;
+        displayProducts();
+      };
+      const viewDetails = productId => {
+        // Implement product details view logic here
+        console.log(`Viewing details for product ${productId}`);
+      };
+      init();
     });
   </script>
 </body>
-
 </html>

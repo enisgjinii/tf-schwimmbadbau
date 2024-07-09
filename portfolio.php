@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title>Portfolio</title>
@@ -22,17 +23,14 @@
   <link href="css/style.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.15/dist/sweetalert2.min.css" rel="stylesheet" />
 </head>
+
 <body>
-  <!-- Spinner Start -->
-  <?php include 'partials/spinner.php'; ?>
-  <!-- Spinner End -->
-  <!-- Topbar Start -->
-  <?php include 'partials/toopbar.php'; ?>
-  <!-- Topbar End -->
-  <!-- Navbar Start -->
-  <?php include 'partials/navbar.php'; ?>
-  <!-- Navbar End -->
-  <!-- Page Header Start -->
+  <?php
+  $partials = ['spinner', 'toopbar', 'navbar'];
+  foreach ($partials as $partial) {
+    include "partials/$partial.php";
+  }
+  ?>
   <div class="container-fluid header-bg py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
       <h1 class="display-4 text-white mb-3 animated slideInDown">Portfolio</h1>
@@ -52,65 +50,73 @@
         <?php
         $portfolioItems = [
           [
+            'id' => 1,
             'image' => 'portfolio-1.jpg',
             'title' => 'Ausstellungsgarten',
             'description' => 'Garten mit Sauna und Schwimmbad mit Holzabdeckung'
           ],
           [
+            'id' => 2,
             'image' => 'portfolio-2.jpg',
             'title' => 'BV: Zeitlarn - Pool im Garten',
             'description' => ''
           ],
           [
+            'id' => 3,
             'image' => 'portfolio-3.jpg',
             'title' => 'Zeitlarn',
             'description' => 'Gardenanlage mit Pool.'
           ],
           [
+            'id' => 4,
             'image' => 'portfolio-4.jpg',
             'title' => 'Hundertwasserturm in Abensberg',
             'description' => 'Hundertwasserturm und Kunsthaus in Abensberg.'
           ],
           [
+            'id' => 5,
             'image' => 'portfolio-5.jpg',
             'title' => 'Wasser im Garten',
             'description' => 'Pools - Schwimmteiche - Wasserspiele.'
           ],
           [
-            //             HolzimGarten
-            // Holz im Garten
+            'id' => 6,
             'image' => 'portfolio-6.jpg',
             'title' => 'HolzimGarten',
             'description' => 'Holz im Garten.'
           ],
           [
-            // Gartenanlage Aufhausen
-            // Gartenanlage Pflasterarbeiten Natursteinplatten Kiesabdeckung und Sichtschutzstehlen
+            'id' => 7,
             'image' => 'portfolio-7.jpg',
             'title' => 'Gartenanlage Aufhausen',
             'description' => 'Gartenanlage Pflasterarbeiten Natursteinplatten Kiesabdeckung und Sichtschutzstehlen.'
           ],
           [
+            'id' => 8,
             'image' => 'portfolio-8.jpeg',
             'title' => 'Pool mit Ausblick',
             'description' => ''
           ],
           [
+            'id' => 9,
             'image' => 'portfolio-9.jpeg',
             'title' => 'Poolanlage Regensburg',
             'description' => ''
           ],
           [
+            'id' => 10,
             'image' => 'portfolio-10.jpeg',
             'title' => 'Pool mit Holzeinfassung',
             'description' => ''
           ],
           [
+            'id' => 11,
             'image' => 'portfolio-11.jpeg',
             'title' => 'Pool mit grauer Folie',
             'description' => ''
           ],
           [
+            'id' => 12,
             'image' => 'portfolio-12.jpg',
             'title' => 'Gartenanlage mit Pool 7 x 3,50',
             'description' => ''
@@ -120,6 +126,7 @@
         $delay = 0.1;
         foreach ($portfolioItems as $item) {
           $imagePath = "$portfolioDir/{$item['image']}";
+          $id = $item['id'];
           $title = $item['title'];
           $description = $item['description'];
           $delay += 0.1;
@@ -132,7 +139,7 @@
                 <h5 class="card-title"><?= $title ?></h5>
                 <p class="card-text flex-grow-1"><?= $description ?: 'No description available' ?></p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <a href="<?= $imagePath ?>" class="btn btn-primary mt-auto w-75 mx-1" style="border-radius: 8px;">Read More</a>
+                  <a href="portfoliodetails.php?id=<?= $id ?>" class="btn btn-primary mt-auto w-75 mx-1" style="border-radius: 8px;">Read More</a>
                   <a href="<?= $imagePath ?>" data-lightbox="portfolio" class="btn btn-primary mt-auto w-25" style="border-radius: 8px;">
                     <i class="bi bi-eye-fill"></i>
                   </a>
@@ -164,7 +171,7 @@
   <script src="lib/lightbox/js/lightbox.min.js"></script>
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
-  ]<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     $(document).ready(function() {
       $('#contactForm').on('submit', function(e) {
@@ -204,4 +211,5 @@
     });
   </script>
 </body>
+
 </html>
