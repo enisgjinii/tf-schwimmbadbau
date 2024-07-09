@@ -100,6 +100,7 @@
             margin: 20px 0;
         }
     </style>
+    <?php include 'msc.php'; ?>
 </head>
 <body>
     <div class="container">

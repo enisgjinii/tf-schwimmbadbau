@@ -15,16 +15,15 @@
                 </p>
                 <div class="d-flex pt-2">
                     <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a> -->
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                    <!-- Whatsapp -->
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=100067726475675" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/tf_schwimmbadbau/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <!-- whatsapp -->
+                    <a class="btn btn-outline-light btn-social" href="https://wa.me/4917623768429" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-light mb-4">Schnelle Links</h5>
-                <a class="btn btn-link" href="">Über uns</a>
+                <a class="btn btn-link" href="about.php">Über uns</a>
                 <a class="btn btn-link" href="">Kontaktiere uns</a>
                 <a class="btn btn-link" href="">Unsere Dienstleistungen</a>
                 <a class="btn btn-link" href="">Allgemeine Geschäftsbedingungen</a>
@@ -57,12 +56,10 @@
                     &copy; <a class="border-bottom" href="#">Fabian Schwimmer</a>, Alle Rechte vorbehalten.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     Entworfen von
                     <a class="border-bottom" href="https://enisgjini.framer.website">Enis Gjini</a>
                     <br />Vertrieben von:
                     <a href="https://enisgjini.framer.website" target="_blank">Enis Gjini</a>
-<a href="https://enisgini.framer.website� target="_blankre> enis gind </a>
                 </div>
             </div>
         </div>

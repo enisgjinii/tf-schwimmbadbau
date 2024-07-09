@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <title>Portfolio</title>
@@ -22,8 +21,8 @@
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.15/dist/sweetalert2.min.css" rel="stylesheet" />
+  <?php include 'msc.php'; ?>
 </head>
-
 <body>
   <?php
   $partials = ['spinner', 'toopbar', 'navbar'];
@@ -211,5 +210,4 @@
     });
   </script>
 </body>
-
 </html>

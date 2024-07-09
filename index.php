@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title></title>
@@ -23,7 +24,9 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
+  <?php include 'msc.php'; ?>
 </head>
+
 <body>
   <?php include 'partials/spinner.php'; ?>
   <?php include 'partials/toopbar.php'; ?>
@@ -429,4 +432,5 @@
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
 </body>
+
 </html>

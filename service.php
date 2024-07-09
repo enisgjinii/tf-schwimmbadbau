@@ -1,7 +1,6 @@
 <?php include 'api/get_services.php'; ?>
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="utf-8" />
   <title>Leistungen</title>
@@ -23,28 +22,25 @@
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+  <?php include 'msc.php'; ?>
   <style>
     .service-card {
       border-radius: 15px;
       transition: transform 0.3s;
     }
-
     .service-card:hover {
       transform: scale(1.05);
     }
-
     .service-icon {
       font-size: 50px;
       color: #80b1d9;
       transition: color 0.3s;
     }
-
     .service-card:hover .service-icon {
       color: #80b1d9;
     }
   </style>
 </head>
-
 <body>
   <?php
   $partials = ['spinner', 'toopbar', 'navbar'];
@@ -107,5 +103,4 @@
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
 </body>
-
 </html>

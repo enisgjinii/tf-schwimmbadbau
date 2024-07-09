@@ -1,7 +1,6 @@
 <?php include 'api/get_work_gallery.php'; ?>
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="utf-8" />
     <title>Portfolio - <?= htmlspecialchars($item['title']) ?></title>
@@ -30,8 +29,8 @@
             object-fit: cover;
         }
     </style>
+    <?php include 'msc.php'; ?>
 </head>
-
 <body>
     <?php
     $partials = ['spinner', 'toopbar', 'navbar'];
@@ -116,5 +115,4 @@ border: 1px solid rgba(255, 255, 255, 0.3);">
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
-
 </html>

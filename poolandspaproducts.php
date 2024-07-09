@@ -1,6 +1,7 @@
 <?php include 'get_products.php'; ?>
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="utf-8" />
   <title>Pool und SPA Pflege Produkte</title>
@@ -26,16 +27,20 @@
     .fade-in {
       animation: fadeIn 0.5s;
     }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
     }
   </style>
+  <?php include 'msc.php'; ?>
 </head>
+
 <body>
   <?php include 'partials/spinner.php'; ?>
   <?php include 'partials/toopbar.php'; ?>
@@ -71,6 +76,15 @@
           <button type="submit" class="btn btn-primary">Suchen</button>
         </div>
       </form>
+      <!-- Sort options -->
+      <div class="mb-4">
+        <select id="sortSelect" class="form-select">
+          <option value="name-asc">Name (A-Z)</option>
+          <option value="name-desc">Name (Z-A)</option>
+          <option value="category-asc">Kategorie (A-Z)</option>
+          <option value="category-desc">Kategorie (Z-A)</option>
+        </select>
+      </div>
       <!-- Product list -->
       <div id="productList" class="row">
         <!-- Products will be dynamically inserted here -->
@@ -92,6 +106,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+              <a id="downloadImageBtn" class="btn btn-primary" download>Bild herunterladen</a>
             </div>
           </div>
         </div>
@@ -119,13 +134,18 @@
         allProducts: [],
         categories: [],
         currentPage: 1,
-        productsPerPage: 12
+        productsPerPage: 12,
+        sortBy: 'name',
+        sortOrder: 'asc'
       };
       const elements = {
         productList: $('#productList'),
         searchInput: $('#searchInput'),
         categoryFilter: $('#categoryFilter'),
-        pagination: $('#pagination')
+        pagination: $('#pagination'),
+        sortSelect: $('#sortSelect'),
+        productModal: $('#productModal'),
+        downloadImageBtn: $('#downloadImageBtn')
       };
       const init = async () => {
         try {
@@ -136,10 +156,12 @@
           state.allProducts = products;
           state.categories = categories;
           populateCategoryFilter();
+          populateSortOptions();
           displayProducts();
           setupEventListeners();
         } catch (error) {
           console.error('Error initializing:', error);
+          showAlert('Error', 'Failed to load products. Please try again later.', 'error');
         }
       };
       const populateCategoryFilter = () => {
@@ -147,13 +169,32 @@
           elements.categoryFilter.append(`<option value="${category}">${category}</option>`);
         });
       };
-      const setupEventListeners = () => {
-        elements.searchInput.on('keyup', () => filterProducts());
-        $('#searchForm').on('submit', e => {
-          e.preventDefault();
-          filterProducts();
+      const populateSortOptions = () => {
+        const sortOptions = [{
+            value: 'name-asc',
+            text: 'Name (A-Z)'
+          },
+          {
+            value: 'name-desc',
+            text: 'Name (Z-A)'
+          },
+          {
+            value: 'category-asc',
+            text: 'Kategorie (A-Z)'
+          },
+          {
+            value: 'category-desc',
+            text: 'Kategorie (Z-A)'
+          }
+        ];
+        sortOptions.forEach(option => {
+          elements.sortSelect.append(`<option value="${option.value}">${option.text}</option>`);
         });
-        elements.categoryFilter.on('change', () => filterProducts());
+      };
+      const setupEventListeners = () => {
+        elements.searchInput.on('input', debounce(filterProducts, 300));
+        elements.categoryFilter.on('change', filterProducts);
+        elements.sortSelect.on('change', handleSort);
         $('#resetFilters').on('click', resetFilters);
         elements.productList.on('click', '.view-details', e => viewDetails($(e.target).data('product-id')));
       };
@@ -166,7 +207,24 @@
           (!selectedCategory || product.category === selectedCategory)
         );
         state.currentPage = 1;
+        sortProducts(filteredProducts);
         displayProducts(filteredProducts);
+      };
+      const handleSort = () => {
+        const [sortBy, sortOrder] = elements.sortSelect.val().split('-');
+        state.sortBy = sortBy;
+        state.sortOrder = sortOrder;
+        sortProducts();
+        displayProducts();
+      };
+      const sortProducts = (products = state.allProducts) => {
+        products.sort((a, b) => {
+          const aValue = a[state.sortBy].toLowerCase();
+          const bValue = b[state.sortBy].toLowerCase();
+          if (aValue < bValue) return state.sortOrder === 'asc' ? -1 : 1;
+          if (aValue > bValue) return state.sortOrder === 'asc' ? 1 : -1;
+          return 0;
+        });
       };
       const displayProducts = (products = state.allProducts) => {
         elements.productList.empty();
@@ -181,20 +239,20 @@
       };
       const renderProduct = product => {
         elements.productList.append(`
-      <div class="col-md-3 mb-3 fade-in">
-        <div class="card h-100">
-          <img src="${product.image}" class="card-img-top lazy" alt="${product.name}" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">${product.name}</h5>
-            <p class="card-text">${product.description}</p>
-            <p class="card-text"><small class="text-muted">${product.category}</small></p>
+          <div class="col-md-3 mb-3 fade-in">
+            <div class="card h-100">
+              <img src="${product.image}" class="card-img-top lazy" alt="${product.name}" loading="lazy">
+              <div class="card-body">
+                <h5 class="card-title">${product.name}</h5>
+                <p class="card-text">${truncateText(product.description, 100)}</p>
+                <p class="card-text"><small class="text-muted">${product.category}</small></p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-primary view-details" data-product-id="${product.id}">Details</button>
+              </div>
+            </div>
           </div>
-          <div class="card-footer">
-            <button class="btn btn-primary view-details" data-product-id="${product.id}">Details</button>
-          </div>
-        </div>
-      </div>
-    `);
+        `);
       };
       const updatePagination = totalProducts => {
         elements.pagination.empty();
@@ -213,15 +271,46 @@
       const resetFilters = () => {
         elements.searchInput.val('');
         elements.categoryFilter.val('');
+        elements.sortSelect.val('name-asc');
         state.currentPage = 1;
+        state.sortBy = 'name';
+        state.sortOrder = 'asc';
         displayProducts();
       };
       const viewDetails = productId => {
-        // Implement product details view logic here
-        console.log(`Viewing details for product ${productId}`);
+        const product = state.allProducts.find(p => p.id === productId);
+        if (product) {
+          elements.productModal.find('.modal-title').text(product.name);
+          elements.productModal.find('.modal-body').html(`
+            <img src="${product.image}" class="img-fluid mb-3" alt="${product.name}">
+            <p><strong>Kategorie:</strong> ${product.category}</p>
+            <p>${product.description}</p>
+          `);
+          elements.downloadImageBtn.attr('href', product.image);
+          elements.productModal.modal('show');
+        }
+      };
+      const truncateText = (text, maxLength) => {
+        return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+      };
+      const debounce = (func, delay) => {
+        let timeoutId;
+        return (...args) => {
+          clearTimeout(timeoutId);
+          timeoutId = setTimeout(() => func.apply(null, args), delay);
+        };
+      };
+      const showAlert = (title, text, icon) => {
+        Swal.fire({
+          title: title,
+          text: text,
+          icon: icon,
+          confirmButtonText: 'OK'
+        });
       };
       init();
     });
   </script>
 </body>
+
 </html>

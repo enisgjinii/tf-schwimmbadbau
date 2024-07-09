@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="utf-8" />
     <title>Über Uns - TF-Schwimmbadbau/Gartenbau</title>
@@ -24,17 +23,15 @@
             object-fit: contain;
             padding: 1rem;
         }
-
         .card {
             transition: transform 0.3s;
         }
-
         .card:hover {
             transform: translateY(-5px);
         }
     </style>
+    <?php include 'msc.php'; ?>
 </head>
-
 <body>
     <!-- Header and Navigation -->
     <?php include 'partials/spinner.php'; ?>
@@ -190,5 +187,4 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
-
 </html>

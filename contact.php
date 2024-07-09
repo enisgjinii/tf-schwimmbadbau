@@ -17,6 +17,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <?php include 'msc.php'; ?>
 </head>
 
 <body>
@@ -121,7 +123,7 @@
         </div>
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
           <div class="h-100" style="min-height: 400px">
-            <iframe style="border-radius: 15px" class="rounded w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10510.80380544223!2d11.86493544107894!3d48.8066859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479fb44c2f202ec9%3A0xea967918b2e36ccb!2sTF%20Schwimmbadbau%2FPflasterbau!5e0!3m2!1sen!2s!4v1720104849337!5m2!1sen!2s" width="600" height="450" frameborder="0"  style="border:0;border-radius: 25px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe style="border-radius: 15px" class="rounded w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10510.80380544223!2d11.86493544107894!3d48.8066859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479fb44c2f202ec9%3A0xea967918b2e36ccb!2sTF%20Schwimmbadbau%2FPflasterbau!5e0!3m2!1sen!2s!4v1720104849337!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0;border-radius: 25px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>

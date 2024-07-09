@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pool Service - Project Timeline</title>
   <link href="" rel="stylesheet">
+  <?php include 'msc.php'; ?>
   <?php
   $css_files = [
     "https://api.fontshare.com/v2/css?f[]=general-sans@400&display=swap",

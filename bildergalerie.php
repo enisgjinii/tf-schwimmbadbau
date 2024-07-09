@@ -76,6 +76,8 @@
             opacity: 1;
         }
     </style>
+
+    <?php include 'msc.php'; ?>
 </head>
 
 <body>

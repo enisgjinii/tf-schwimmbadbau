@@ -17,10 +17,10 @@
                 <small>+49 176 23768429</small>
             </div>
             <div class="h-100 d-inline-flex align-items-center">
-                <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-sm-square bg-white text-primary me-1" target="_blank" href="https://www.facebook.com/profile.php?id=100067726475675"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-sm-square bg-white text-primary me-0" target="_blank" href="https://www.instagram.com/tf_schwimmbadbau/"><i class="fab fa-instagram"></i></a>
+                <!-- whatsapp -->
+                <a class="btn btn-sm-square bg-white text-primary me-0" target="_blank" href="https://wa.me/4917623768429"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
