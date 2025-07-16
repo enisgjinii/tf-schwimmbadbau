@@ -145,8 +145,8 @@
         <div class="col-lg-6">
           <p><span class="text-primary me-2">#</span>Unsere Leistungen</p>
           <h1 class="display-5 mb-0">
-            Besondere Services für <br>
-            <span class="text-primary">Pool und Garten</span>
+            Unsere Leistungen – <br>
+            <span class="text-primary">Alles aus einer Hand</span>
           </h1>
         </div>
         <div class="col-lg-6 ">
@@ -154,51 +154,41 @@
             <i class="fa fa-3x fa-phone-alt text-white"></i>
             <div class="ms-4">
               <p class="text-white mb-0">Rufen Sie für weitere Informationen an</p>
-              <h2 class="text-white mb-0">+012 345 6789</h2>
+              <h2 class="text-white mb-0">+49 176 23768429</h2>
             </div>
           </div>
         </div>
       </div>
       <div class="row gy-5 gx-4">
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <i class="fas fa-comments fa-3x text-primary mb-3"></i>
+          <h5 class="mb-3">Beratung & Planung</h5>
+          <span>Wir nehmen uns Zeit, Ihre Wünsche zu verstehen – und entwickeln daraus ein passgenaues Poolkonzept.</span>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
           <i class="fas fa-swimming-pool fa-3x text-primary mb-3"></i>
-          <h5 class="mb-3">Poolbau</h5>
-          <span>Planung, Bau und Installation von individuellen Swimmingpools.</span>
+          <h5 class="mb-3">Neubau von Pools</h5>
+          <span>Individuelle Pools aus Beton, Folie oder Edelstahl – exakt nach Maß, mit hochwertiger Technik und stilvollem Design.</span>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-          <i class="fas fa-tree fa-3x text-primary mb-3"></i>
-          <h5 class="mb-3">Landschaftsgestaltung</h5>
-          <span>Gestaltung und Pflege von Gärten und Außenanlagen.</span>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+          <h5 class="mb-3">Sanierung & Modernisierung</h5>
+          <span>Ihr Pool ist in die Jahre gekommen? Wir bringen ihn auf den neuesten Stand – technisch und optisch.</span>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+          <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
+          <h5 class="mb-3">Pooltechnik & Zubehör</h5>
+          <span>Von Filteranlagen über Wärmepumpen bis zur Beleuchtung – wir liefern und installieren die passende Technik.</span>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
           <i class="fas fa-wrench fa-3x text-primary mb-3"></i>
-          <h5 class="mb-3">Wartung und Reparatur</h5>
-          <span>Regelmäßige Wartung und Reparaturdienste für Pools und Gärten.</span>
+          <h5 class="mb-3">Wartung & Pflege</h5>
+          <span>Auch nach dem Bau sind wir für Sie da – mit saisonaler Einwinterung, Reinigung und technischer Wartung.</span>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-          <i class="fas fa-swimmer fa-3x text-primary mb-3"></i>
-          <h5 class="mb-3">Schwimmunterricht</h5>
-          <span>Professionelle Schwimmunterrichte für Kinder und Erwachsene.</span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-          <i class="fas fa-umbrella-beach fa-3x text-primary mb-3"></i>
-          <h5 class="mb-3">Poolzubehör</h5>
-          <span>Verkauf und Installation von Poolzubehör wie Abdeckungen und Pumpen.</span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
           <i class="fas fa-tree fa-3x text-primary mb-3"></i>
-          <h5 class="mb-3">Gartenbau</h5>
-          <span>Planung, Anlage und Pflege von Gärten und Grünanlagen.</span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-          <i class="fas fa-shower fa-3x text-primary mb-3"></i>
-          <h5 class="mb-3">Poolreinigung</h5>
-          <span>Professionelle Reinigungsdienste für einen sauberen und gesunden Pool.</span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-          <i class="fas fa-utensils fa-3x text-primary mb-3"></i>
-          <h5 class="mb-3">Essen & Getränke</h5>
-          <span>Genießen Sie köstliche Speisen und erfrischende Getränke in unserer Einrichtung.</span>
+          <h5 class="mb-3">Gartengestaltung</h5>
+          <span>Egal ob Wege, Stufen, Terrassen bis zu besonderen Bepflanzungen – alles aus einer Hand.</span>
         </div>
       </div>
     </div>
