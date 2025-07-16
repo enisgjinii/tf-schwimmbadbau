@@ -112,7 +112,7 @@
   <!-- About End -->
   <!-- Fakten Start -->
   <!-- <div class="container-xl bg-primary facts my-5 py-5 wow fadeInUp" data-wow-delay="0.1s"> -->
-  <div class="container-fluid bg-primary facts my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <!-- <div class="container-fluid bg-primary facts my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="row g-4">
       <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
         <i class="fa fa-swimming-pool fa-3x text-primary mb-3"></i>
@@ -135,7 +135,7 @@
         <p class="text-white mb-0">Länder Bedient</p>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- </div> -->
   <!-- Facts End -->
   <!-- Service Start -->
