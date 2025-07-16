@@ -77,26 +77,29 @@
     <div class="container">
       <div class="row g-5">
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-          <p><span class="text-primary me-2">#</span>Willkommen bei TF-Schwimmbadbau/Gartenbau</p>
+          <p><span class="text-primary me-2">#</span>Willkommen bei TF Schwimmbadbau - Ihr Partner für exklusiven Poolbau</p>
           <h2 class="fs-4 mb-4">
-            Warum Sie einen Pool von <br><span class="text-primary fs-1">TF-Schwimmbadbau/Gartenbau</span> brauchen!
+            Träumen Sie von Ihrem eigenen Pool im Garten? <br><span class="text-primary fs-1">Wir machen diesen Traum wahr!</span>
           </h2>
           <p class="mb-4">
-            Erfahren Sie, warum ein Pool von TF-Schwimmbadbau/Gartenbau eine großartige Wahl ist. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.
+            Als Spezialist für hochwertigen Schwimmbadbau in privaten Anlagen gestalten wir individuelle Poollösungen - präzise geplant, professionell umgesetzt, langlebig und stilvoll.
+          </p>
+          <p class="mb-4">
+            Ob moderner Betonpool mit Folie, eleganter Edelstahlpool oder Fertigbecken - wir schaffen Orte der Entspannung und Lebensqualität.
           </p>
           <h5 class="mb-3">
-            <i class="far fa-check-circle text-primary me-3"></i>Kostenloses Parken
+            <i class="far fa-check-circle text-primary me-3"></i>Planung & Beratung
           </h5>
           <h5 class="mb-3">
-            <i class="far fa-check-circle text-primary me-3"></i>Natürliche Umgebung
+            <i class="far fa-check-circle text-primary me-3"></i>Poolbau & Technik & Gartengestaltung
           </h5>
           <h5 class="mb-3">
-            <i class="far fa-check-circle text-primary me-3"></i>Professionelle Beratung & Sicherheit
+            <i class="far fa-check-circle text-primary me-3"></i>Sanierung & Modernisierung
           </h5>
           <h5 class="mb-3">
-            <i class="far fa-check-circle text-primary me-3"></i>Weltbeste Tiere
+            <i class="far fa-check-circle text-primary me-3"></i>Pflege & Wartung
           </h5>
-          <a class="btn btn-primary py-3 px-5 mt-3" href="">Mehr erfahren</a>
+          <a class="btn btn-primary py-3 px-5 mt-3" href="contact.php">Kontakt aufnehmen</a>
         </div>
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
           <div class="img-border">
