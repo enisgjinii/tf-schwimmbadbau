@@ -297,63 +297,85 @@
     <div class="container py-5">
       <div class="row g-5">
         <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
+          <h1 class="display-6 text-white mb-5">Lassen Sie uns über Ihren Pool sprechen</h1>
+          <p class="text-white mb-4">Ob erste Idee oder konkreter Plan - wir freuen uns auf Ihre Anfrage.</p>
+          
+          <div class="text-white mb-4">
+            <h5 class="mb-3 text-white">TF Schwimmbadbau</h5>
+            <p class="mb-2">Werkstraße 7</p>
+            <p class="mb-2">09443 916 999 0</p>
+            <p class="mb-2">info@tfschwimmbadbau.de</p>
+            <p class="mb-4">Mo-Fr. 8 bis 17 Uhr</p>
+          </div>
+          
+          <!-- Contact Form -->
+          <div class="bg-white rounded p-4">
+            <h6 class="text-primary mb-3">Kontaktformular</h6>
+            <form>
+              <div class="mb-3">
+                <label for="interest" class="form-label text-dark">Ich interessiere mich für…</label>
+                <select class="form-select" id="interest">
+                  <option selected>Bitte wählen Sie...</option>
+                  <option value="beratung">Beratung & Planung</option>
+                  <option value="neubau">Neubau von Pools</option>
+                  <option value="sanierung">Sanierung & Modernisierung</option>
+                  <option value="technik">Pooltechnik & Zubehör</option>
+                  <option value="wartung">Wartung & Pflege</option>
+                  <option value="garten">Gartengestaltung</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label text-dark">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Ihr Name">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label text-dark">E-Mail</label>
+                <input type="email" class="form-control" id="email" placeholder="ihre.email@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label text-dark">Telefon</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Ihre Telefonnummer">
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label text-dark">Nachricht</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Ihre Nachricht an uns..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Anfrage senden</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 text-light wow fadeIn" data-wow-delay="0.5s">
           <h1 class="display-6 text-white mb-5">Öffnungszeiten</h1>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <span>Montag</span>
-              <span>9:00 - 18:00</span>
+              <span>8:00 - 17:00</span>
             </li>
             <li class="list-group-item">
               <span>Dienstag</span>
-              <span>9:00 - 18:00</span>
+              <span>8:00 - 17:00</span>
             </li>
             <li class="list-group-item">
               <span>Mittwoch</span>
-              <span>9:00 - 18:00</span>
+              <span>8:00 - 17:00</span>
             </li>
             <li class="list-group-item">
               <span>Donnerstag</span>
-              <span>9:00 - 18:00</span>
+              <span>8:00 - 17:00</span>
             </li>
             <li class="list-group-item">
               <span>Freitag</span>
-              <span>9:00 - 18:00</span>
+              <span>8:00 - 17:00</span>
             </li>
             <li class="list-group-item">
               <span>Samstag</span>
-              <span>9:00 - 18:00</span>
+              <span>Nach Vereinbarung</span>
             </li>
             <li class="list-group-item">
               <span>Sonntag</span>
               <span>Geschlossen</span>
             </li>
           </ul>
-        </div>
-        <div class="col-md-6 text-light wow fadeIn" data-wow-delay="0.5s">
-          <h1 class="display-6 text-white mb-5">Kontaktinformationen</h1>
-          <table class="table">
-            <tbody>
-              <tr>
-                <td>Pool Services</td>
-                <td>Werkstraße 7
-                  93326 Abensberg</td>
-              </tr>
-              <tr>
-                <td>Kontakt</td>
-                <td>
-                  <p class="mb-2">Tel. 09443/916 999-0</p>
-                  <p class="mb-0">info@tfschwimmbadbau.de</p>
-                </td>
-              </tr>
-              <!-- <tr>
-                <td>Support</td>
-                <td>
-                  <p class="mb-2">+49 123 4567890</p>
-                  <p class="mb-0">support@example.com</p>
-                </td>
-              </tr> -->
-            </tbody>
-          </table>
         </div>
       </div>
     </div>
