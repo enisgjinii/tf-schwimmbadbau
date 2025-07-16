@@ -387,41 +387,49 @@
       <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
         Das sagen unsere Kunden!
       </h1>
-      <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-        <div class="testimonial-item text-center">
-          <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 100px; height: 100px" />
-          <div class="testimonial-text rounded text-center p-4">
-            <p>
-              „Ich bin sehr zufrieden mit dem Poolservice. Das Team ist pünktlich, professionell und sorgt immer dafür, dass mein Pool in perfektem Zustand ist. Absolut empfehlenswert!“
-            </p>
-            <h5 class="mb-1">Stefan Müller</h5>
-            <span class="fst-italic">Hausbesitzer</span>
+      
+      <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+      <script src="https://static.elfsight.com/platform/platform.js" async></script>
+      <div class="elfsight-app-6f19bfb6-61fa-463b-a395-7005fe7c73bd" data-elfsight-app-lazy></div>
+    </div>
+  </div>
+  <!-- Testimonial End -->
+  
+  <!-- Instagram Feed Start -->
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+        <h1 class="display-5 mb-3">Folgen Sie uns auf Instagram</h1>
+        <p class="text-muted">Entdecken Sie unsere neuesten Pool-Projekte und Inspirationen</p>
+      </div>
+      
+      <!-- Instagram Feed Widget -->
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="text-center">
+            <a href="https://www.instagram.com/tf_schwimmbadbau/" target="_blank" class="btn btn-primary btn-lg mb-4">
+              <i class="fab fa-instagram me-2"></i>
+              @tf_schwimmbadbau auf Instagram
+            </a>
           </div>
-        </div>
-        <div class="testimonial-item text-center">
-          <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="img/testimonial-2.jpg" style="width: 100px; height: 100px" />
-          <div class="testimonial-text rounded text-center p-4">
-            <p>
-              „Seitdem ich diesen Service nutze, hat sich die Qualität meines Poolwassers enorm verbessert. Die Mitarbeiter sind freundlich und sehr kompetent. Eine echte Bereicherung!“
-            </p>
-            <h5 class="mb-1">Anna Schmidt</h5>
-            <span class="fst-italic">Villa Besitzerin</span>
-          </div>
-        </div>
-        <div class="testimonial-item text-center">
-          <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="img/testimonial-3.jpg" style="width: 100px; height: 100px" />
-          <div class="testimonial-text rounded text-center p-4">
-            <p>
-              „Der Komplettservice ist jeden Cent wert. Von der Reinigung bis zur Wartung, alles wird sorgfältig und zuverlässig erledigt. Ich kann es nur weiterempfehlen!“
-            </p>
-            <h5 class="mb-1">Lars Becker</h5>
-            <span class="fst-italic">Hotelmanager</span>
+          
+          <!-- Instagram Feed Embed -->
+          <div class="instagram-feed-container">
+            <!-- You can add Instagram feed widget here -->
+            <div class="text-center p-5 bg-light rounded">
+              <i class="fab fa-instagram fa-3x text-primary mb-3"></i>
+              <h4>Instagram Feed</h4>
+              <p class="text-muted">Hier werden Ihre Instagram-Posts angezeigt</p>
+              <a href="https://www.instagram.com/tf_schwimmbadbau/" target="_blank" class="btn btn-outline-primary">
+                Instagram besuchen
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Testimonial End -->
+  <!-- Instagram Feed End -->
   <?php include 'partials/footer.php'; ?>
   <!-- Back to Top -->
   <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
