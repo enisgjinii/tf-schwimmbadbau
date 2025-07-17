@@ -32,24 +32,26 @@
   <?php include 'partials/toopbar.php'; ?>
   <?php include 'partials/navbar.php'; ?>
   <!-- Header Start -->
-  <div class="container-fluid bg-dark p-0 mb-5">
-    <div class="row g-0">
-      <div class="col-lg-6 p-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="bg-dark h-100 d-flex flex-column justify-content-center p-5">
-          <h1 class="display-4 text-light mb-5">
-            TF Schwimmbadbau – weil Ihr Garten mehr verdient.
-          </h1>
-          <div class="d-flex align-items-center pt-4 animated slideInDown">
-            <a href="" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">Mehr lesen</a>
-            <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-              <span></span>
-            </button>
-            <h6 class="text-white m-0 ms-4 d-none d-sm-block">Schau Video</h6>
+  <div class="container-fluid p-0 mb-5 position-relative">
+    <div class="hero-section" style="background-image: url('img/carousel-1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; min-height: 600px;">
+      <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5);"></div>
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-lg-8 col-md-10 wow fadeIn" data-wow-delay="0.1s" style="position: relative; z-index: 2;">
+            <div class="text-light">
+              <h1 class="display-4 text-light mb-5">
+                TF Schwimmbadbau – weil Ihr Garten mehr verdient.
+              </h1>
+              <div class="d-flex align-items-center pt-4 animated slideInDown">
+                <a href="" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">Mehr lesen</a>
+                <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                  <span></span>
+                </button>
+                <h6 class="text-white m-0 ms-4 d-none d-sm-block">Schau Video</h6>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-        <img class="img-fluid" src="img/carousel-1.jpg" alt="" />
       </div>
     </div>
   </div>
