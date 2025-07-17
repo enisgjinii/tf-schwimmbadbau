@@ -396,38 +396,8 @@
   <!-- Testimonial End -->
   
   <!-- Instagram Feed Start -->
-  <div class="container-xxl py-5">
-    <div class="container">
-      <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-        <h1 class="display-5 mb-3">Folgen Sie uns auf Instagram</h1>
-        <p class="text-muted">Entdecken Sie unsere neuesten Pool-Projekte und Inspirationen</p>
-      </div>
-      
-      <!-- Instagram Feed Widget -->
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="text-center">
-            <a href="https://www.instagram.com/tf_schwimmbadbau/" target="_blank" class="btn btn-primary btn-lg mb-4">
-              <i class="fab fa-instagram me-2"></i>
-              @tf_schwimmbadbau auf Instagram
-            </a>
-          </div>
-          
-          <!-- Instagram Feed Embed -->
-          <div class="instagram-feed-container">
-            <!-- You can add Instagram feed widget here -->
-            <div class="text-center p-5 bg-light rounded">
-              <i class="fab fa-instagram fa-3x text-primary mb-3"></i>
-              <h4>Instagram Feed</h4>
-              <p class="text-muted">Hier werden Ihre Instagram-Posts angezeigt</p>
-              <a href="https://www.instagram.com/tf_schwimmbadbau/" target="_blank" class="btn btn-outline-primary">
-                Instagram besuchen
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div id="instagram-feed">
+    <!-- Instagram feed will be loaded here via JavaScript -->
   </div>
   <!-- Instagram Feed End -->
   <?php include 'partials/footer.php'; ?>
@@ -444,6 +414,8 @@
   <script src="lib/lightbox/js/lightbox.min.js"></script>
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
+  <!-- Instagram Feed Javascript -->
+  <script src="js/instagram-feed.js"></script>
 </body>
 
 </html>
