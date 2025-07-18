@@ -24,10 +24,9 @@ function getDropdownActiveClass($pages)
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn" style="box-shadow: 0 0 0 0" data-wow-delay="0.1s">
     <a href="index.php" class="navbar-brand p-0 d-flex align-items-center">
-        <!-- <img class="img-fluid me-3" src="img/icon/icon-10.png" alt="Icon" /> -->
-        <h5 class="m-0 text-primary">
-            <span class="d-none d-md-inline">TF-Schwimmbadbau/Gartenbau</span>
-            <span class="d-inline d-md-none">TF</span>
+        <img class="img-fluid me-3" src="img/TF Logo mit Schrift 20_1_23.avif" alt="TF Logo" style="max-height: 50px;" />
+        <h5 class="m-0 text-primary d-inline d-md-none">
+            TF
         </h5>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">

@@ -96,32 +96,7 @@
     </div>
   </div>
   <!-- About End -->
-  <!-- Facts Start -->
-  <div class="container-fluid bg-primary facts my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-        <i class="fa fa-swimming-pool fa-3x text-primary mb-3"></i>
-        <h1 class="text-white mb-2" data-toggle="counter-up">5678</h1>
-        <p class="text-white mb-0">Eingebaute Pools</p>
-      </div>
-      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-        <i class="fa fa-smile fa-3x text-primary mb-3"></i>
-        <h1 class="text-white mb-2" data-toggle="counter-up">9876</h1>
-        <p class="text-white mb-0">Zufriedene Kunden</p>
-      </div>
-      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-        <i class="fa fa-certificate fa-3x text-primary mb-3"></i>
-        <h1 class="text-white mb-2" data-toggle="counter-up">5432</h1>
-        <p class="text-white mb-0">Auszeichnungen Gewonnen</p>
-      </div>
-      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-        <i class="fa fa-globe fa-3x text-primary mb-3"></i>
-        <h1 class="text-white mb-2" data-toggle="counter-up">8765</h1>
-        <p class="text-white mb-0">Länder Bedient</p>
-      </div>
-    </div>
-  </div>
-  <!-- Facts End -->
+
   <?php include 'partials/team.php'; ?>
   <?php include 'partials/footer.php'; ?>
   <!-- Zurück nach oben Button -->
