@@ -57,7 +57,7 @@
             </div>
             <div class="ms-4">
               <p class="mb-2"><span class="text-primary me-2">#</span>Jetzt anrufen</p>
-              <h5 class="mb-0">+49 176 23768429</h5>
+                              <h5 class="mb-0">09443/916 999-0</h5>
             </div>
           </div>
         </div>

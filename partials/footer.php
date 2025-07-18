@@ -8,7 +8,7 @@
                     <i class="fa fa-map-marker-alt me-3"></i>93326 Abensberg
                 </p>
                 <p class="mb-2">
-                    <i class="fa fa-phone-alt me-3"></i>+49 176 23768429
+                    <i class="fa fa-phone-alt me-3"></i>09443/916 999-0
                 </p>
                 <p class="mb-2">
                     <i class="fa fa-envelope me-3"></i>info@tfschwimmbadbau.de

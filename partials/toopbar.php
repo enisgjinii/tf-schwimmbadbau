@@ -14,7 +14,7 @@
         <div class="col-lg-5 px-5 text-end">
             <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                 <small class="fa fa-phone-alt text-primary me-2"></small>
-                <small>+49 176 23768429</small>
+                <small>09443/916 999-0</small>
             </div>
             <div class="h-100 d-inline-flex align-items-center">
                 <a class="btn btn-sm-square bg-white text-primary me-1" target="_blank" href="https://www.facebook.com/profile.php?id=100067726475675"><i class="fab fa-facebook-f"></i></a>

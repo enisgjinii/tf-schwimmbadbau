@@ -156,7 +156,7 @@
             <i class="fa fa-3x fa-phone-alt text-white"></i>
             <div class="ms-4">
               <p class="text-white mb-0">Rufen Sie für weitere Informationen an</p>
-              <h2 class="text-white mb-0">+49 176 23768429</h2>
+              <h2 class="text-white mb-0">09443/916 999-0</h2>
             </div>
           </div>
         </div>
