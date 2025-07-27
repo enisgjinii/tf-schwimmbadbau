@@ -24,28 +24,28 @@
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-light mb-4">Schnelle Links</h5>
                 <a class="btn btn-link" href="about.php">Über uns</a>
-                <a class="btn btn-link" href="">Kontaktiere uns</a>
-                <a class="btn btn-link" href="">Unsere Dienstleistungen</a>
-                <a class="btn btn-link" href="">Allgemeine Geschäftsbedingungen</a>
-                <a class="btn btn-link" href="">Unterstützung</a>
+                <a class="btn btn-link" href="contact.php">Kontaktiere uns</a>
+                <a class="btn btn-link" href="service.php">Unsere Dienstleistungen</a>
+                <a class="btn btn-link" href="sitemap.php">Sitemap</a>
+                <a class="btn btn-link" href="impressum.php">Impressum</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-light mb-4">Beliebte Links</h5>
-                <a class="btn btn-link" href="">Über uns</a>
-                <a class="btn btn-link" href="">Kontaktiere uns</a>
-                <a class="btn btn-link" href="">Unsere Dienstleistungen</a>
-                <a class="btn btn-link" href="">Allgemeine Geschäftsbedingungen</a>
-                <a class="btn btn-link" href="">Unterstützung</a>
+                <a class="btn btn-link" href="about.php">Über uns</a>
+                <a class="btn btn-link" href="contact.php">Kontaktiere uns</a>
+                <a class="btn btn-link" href="service.php">Unsere Dienstleistungen</a>
+                <a class="btn btn-link" href="portfolio.php">Portfolio</a>
+                <a class="btn btn-link" href="sitemap.php">Sitemap</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-light mb-4">Newsletter</h5>
-                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                <div class="position-relative mx-auto" style="max-width: 400px">
-                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
-                        SignUp
+                <p>Bleiben Sie über unsere neuesten Angebote und Nachrichten informiert.</p>
+                <form id="newsletterForm" class="position-relative mx-auto" style="max-width: 400px">
+                    <input id="newsletterEmail" class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Ihre E-Mail-Adresse" required />
+                    <button type="submit" id="newsletterSubmit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+                        Anmelden
                     </button>
-                </div>
+                </form>
             </div>
         </div>
     </div>

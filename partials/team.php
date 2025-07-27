@@ -1,5 +1,5 @@
 <!-- Team Start -->
-<div class="container-xxl py-5">
+<div class="container-fluid py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
   <div class="container">
     <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
       <div class="col-lg-6">
@@ -16,7 +16,7 @@
       <?php
       // Define an array with descriptions for each person in the specified order
       $team_members = array(
-        'fabian.jpg' => 'Firmeninhaber, Meisterbetrieb. Betreibt die Firma seit 2008. Fast alle Mitarbeiter haben ihre Lehre bei ihm absolviert. Vielen Dank an alle!',
+        // 'fabian.jpg' => 'Firmeninhaber, Meisterbetrieb. Betreibt die Firma seit 2008. Fast alle Mitarbeiter haben ihre Lehre bei ihm absolviert. Vielen Dank an alle!',
         'reinhold.jpg' => 'Facharbeiter. Multitalent für alle Arbeiten.',
         'mostafa.jpg' => 'Facharbeiter. Zuverlässig und engagiert.',
         'namatulla.jpg' => 'Facharbeiter. Zuverlässig und engagiert.',

@@ -25,8 +25,69 @@
         .carousel-item img {
             width: 100%;
             height: 500px;
-            /* Adjust height as needed */
             object-fit: cover;
+        }
+        
+        .portfolio-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            padding: 2rem 0;
+        }
+        
+        .portfolio-content h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        .portfolio-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        .portfolio-content .full-description {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .carousel-container {
+            position: relative;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .carousel-caption {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        @media (max-width: 991.98px) {
+            .portfolio-content {
+                padding: 2rem 0;
+                text-align: center;
+            }
+            
+            .carousel-item img {
+                height: 400px;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .portfolio-content {
+                padding-left: 3rem;
+            }
+            
+            .carousel-item img {
+                height: 600px;
+            }
         }
     </style>
     <?php include 'msc.php'; ?>
@@ -52,53 +113,52 @@
     </div>
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-12">
-                    <!-- Carousel for Images -->
-                    <div id="portfolioCarousel" class="carousel slide " data-bs-ride="carousel" data-bs-interval="3000" ">
-                        <div class=" carousel-inner shadow" style="border-radius: 16px">
-                        <?php foreach ($item['images'] as $index => $image) : ?>
-                            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-                                <img src="img/portfolio-images-nested/<?= htmlspecialchars($image) ?>" alt="<?= htmlspecialchars($item['title']) ?>" class="d-block w-100 img-fluid" style="object-fit: cover;">
-                                <div class="carousel-caption d-none d-md-block" style="background: rgba(255, 255, 255, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(50px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);">
-                                    <h5 class="text-white"><?= htmlspecialchars($item['title']) ?></h5>
-                                    <p><?= htmlspecialchars($item['description']) ?></p>
-                                </div>
+            <div class="row g-5 align-items-start">
+                <!-- Carousel Column -->
+                <div class="col-lg-7">
+                    <div class="carousel-container">
+                        <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                            <div class="carousel-inner">
+                                <?php foreach ($item['images'] as $index => $image) : ?>
+                                    <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+                                        <img src="img/portfolio-images-nested/<?= htmlspecialchars($image) ?>" alt="<?= htmlspecialchars($item['title']) ?>" class="d-block w-100 img-fluid">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5 class="text-white"><?= htmlspecialchars($item['title']) ?></h5>
+                                            <p><?= htmlspecialchars($item['description']) ?></p>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
-                        <?php endforeach; ?>
+                            <a class="carousel-control-prev" href="#portfolioCarousel" role="button" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#portfolioCarousel" role="button" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </a>
+                            <ol class="carousel-indicators">
+                                <?php foreach ($item['images'] as $index => $image) : ?>
+                                    <li data-bs-target="#portfolioCarousel" data-bs-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
+                                <?php endforeach; ?>
+                            </ol>
+                        </div>
                     </div>
-                    <a class="carousel-control-prev" href="#portfolioCarousel" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#portfolioCarousel" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </a>
-                    <ol class="carousel-indicators">
-                        <?php foreach ($item['images'] as $index => $image) : ?>
-                            <li data-bs-target="#portfolioCarousel" data-bs-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
-                        <?php endforeach; ?>
-                    </ol>
                 </div>
-                <!-- Portfolio Details -->
-                <div class="text-center">
-                    <h2 class="mt-4"><?= htmlspecialchars($item['title']) ?></h2>
-                    <p><?= htmlspecialchars($item['description']) ?></p>
-                    <div><?= $item['full_description'] ?></div>
-                    <br>
-                    <?php if ($id == 3) : ?>
-                        <button class="btn btn-primary my-2" style="border-radius:5px;" onclick="window.location.href='bildergalerie.php';">Bautagebuch mit Bildern</button>
-                    <?php endif; ?>
+                
+                <!-- Portfolio Details Column -->
+                <div class="col-lg-5">
+                    <div class="portfolio-content">
+                        <h2><?= htmlspecialchars($item['title']) ?></h2>
+                        <p class="lead"><?= htmlspecialchars($item['description']) ?></p>
+                        <div class="full-description"><?= $item['full_description'] ?></div>
+                        <?php if ($id == 3) : ?>
+                            <button class="btn btn-primary" style="border-radius:0;" onclick="window.location.href='bildergalerie.php';">Bautagebuch mit Bildern</button>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <?php include 'partials/footer.php'; ?>
     <!-- Back to Top -->
@@ -114,5 +174,18 @@ border: 1px solid rgba(255, 255, 255, 0.3);">
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/687ac93f487057192063ab77/1j0fq489v';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>

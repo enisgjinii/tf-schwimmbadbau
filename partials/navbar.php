@@ -40,8 +40,6 @@ function getDropdownActiveClass($pages)
             <a href="portfolio.php" class="nav-item nav-link <?php echo getActiveClass('portfolio.php'); ?>">Portfolio</a>
             <a href="planung.php" class="nav-item nav-link <?php echo getActiveClass('planung.php'); ?>">Planung</a>
             <a href="poolandspaproducts.php" class="nav-item nav-link <?php echo getActiveClass('poolandspaproducts.php'); ?>">Poolpflege</a>
-            <!-- Impressum und Links -->
-            <a href="impressum.php" class="nav-item nav-link <?php echo getActiveClass('impressum.php'); ?>">Impressum und Links</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle <?php echo getDropdownActiveClass(['team.php', 'membership.php', 'visiting.php', 'testimonial.php', '404.php']); ?>" data-bs-toggle="dropdown">Seiten</a>
                 <div class="dropdown-menu rounded-0 rounded-bottom m-0">
