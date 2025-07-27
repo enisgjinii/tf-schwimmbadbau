@@ -964,8 +964,7 @@
 }
 
 .visiting-hours {
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/bg-2.jpg) center center no-repeat;
-    background-size: cover;
+    /* Background image removed - using solid color from bg-primary class */
 }
 
 .visiting-hours .list-group-item {

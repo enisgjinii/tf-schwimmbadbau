@@ -2,7 +2,7 @@
 <div class="container-fluid footer bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
         <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <h5 class="text-light mb-4">Adresse</h5>
                 <p class="mb-2">
                     <i class="fa fa-map-marker-alt me-3"></i>93326 Abensberg
@@ -21,7 +21,7 @@
                     <a class="btn btn-outline-light btn-social" href="https://wa.me/4917623768429" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <h5 class="text-light mb-4">Schnelle Links</h5>
                 <a class="btn btn-link" href="about.php">Über uns</a>
                 <a class="btn btn-link" href="contact.php">Kontaktiere uns</a>
@@ -29,7 +29,7 @@
                 <a class="btn btn-link" href="sitemap.php">Sitemap</a>
                 <a class="btn btn-link" href="impressum.php">Impressum</a>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <h5 class="text-light mb-4">Beliebte Links</h5>
                 <a class="btn btn-link" href="about.php">Über uns</a>
                 <a class="btn btn-link" href="contact.php">Kontaktiere uns</a>
@@ -37,16 +37,7 @@
                 <a class="btn btn-link" href="portfolio.php">Portfolio</a>
                 <a class="btn btn-link" href="sitemap.php">Sitemap</a>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-4">Newsletter</h5>
-                <p>Bleiben Sie über unsere neuesten Angebote und Nachrichten informiert.</p>
-                <form id="newsletterForm" class="position-relative mx-auto" style="max-width: 400px">
-                    <input id="newsletterEmail" class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Ihre E-Mail-Adresse" required />
-                    <button type="submit" id="newsletterSubmit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
-                        Anmelden
-                    </button>
-                </form>
-            </div>
+
         </div>
     </div>
     <div class="container">

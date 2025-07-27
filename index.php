@@ -561,52 +561,19 @@
   </div> -->
   <!-- Animal End -->
   <!-- Visiting Hours Start -->
-  <div class="container-xxl bg-primary visiting-hours my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container-xxl bg-white visiting-hours my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container py-5">
       <div class="row g-5">
-        <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
-          <h1 class="display-6 text-white mb-5">Lassen Sie uns über Ihren Pool sprechen</h1>
-          <p class="text-white mb-4">Ob erste Idee oder konkreter Plan - wir freuen uns auf Ihre Anfrage.</p>
-          <div class="text-white mb-4">
-            <h5 class="mb-3 text-white">TF Schwimmbadbau</h5>
+        <div class="col-md-12 text-center wow fadeIn" data-wow-delay="0.3s">
+          <h1 class="display-6 text-dark mb-5">Lassen Sie uns über Ihren Pool sprechen</h1>
+          <p class="text-dark mb-4">Ob erste Idee oder konkreter Plan - wir freuen uns auf Ihre Anfrage.</p>
+          <div class="text-dark mb-4">
+            <h5 class="mb-3 text-dark">TF Schwimmbadbau</h5>
             <p class="mb-2">Werkstraße 7</p>
             <p class="mb-2">09443 916 999 0</p>
             <p class="mb-2">info@tfschwimmbadbau.de</p>
             <p class="mb-4">Mo-Fr. 8 bis 17 Uhr</p>
           </div>
-        </div>
-        <div class="col-md-6 text-light wow fadeIn" data-wow-delay="0.5s">
-          <h1 class="display-6 text-white mb-5">Öffnungszeiten</h1>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <span>Montag</span>
-              <span>8:00 - 17:00</span>
-            </li>
-            <li class="list-group-item">
-              <span>Dienstag</span>
-              <span>8:00 - 17:00</span>
-            </li>
-            <li class="list-group-item">
-              <span>Mittwoch</span>
-              <span>8:00 - 17:00</span>
-            </li>
-            <li class="list-group-item">
-              <span>Donnerstag</span>
-              <span>8:00 - 13:00</span>
-            </li>
-            <li class="list-group-item">
-              <span>Freitag</span>
-              <span>8:00 - 17:00</span>
-            </li>
-            <li class="list-group-item">
-              <span>Samstag</span>
-              <span>Nach Vereinbarung</span>
-            </li>
-            <li class="list-group-item">
-              <span>Sonntag</span>
-              <span>Geschlossen</span>
-            </li>
-          </ul>
         </div>
         <div class="col-md-12 text-light wow fadeIn" data-wow-delay="0.5s">
           <!-- Contact Form -->
