@@ -290,19 +290,17 @@
           </div>
         </div>
         <div class="col-lg-6 d-flex justify-content-end">
-          <div class="contact-info-card bg-primary d-flex align-items-center py-4 px-4 shadow-lg" style="max-width: 450px; border-radius: 0; transition: all 0.3s ease; cursor: pointer;" onclick="window.location.href='tel:094439169990'">
-            <div class="contact-icon-wrapper me-3">
-              <i class="fa fa-2x fa-phone-alt text-white" style="transition: transform 0.3s ease;"></i>
+          <a href="tel:094439169990" class="btn btn-primary btn-lg d-flex align-items-center justify-content-between" style="width: 400px; height: 150px; border-radius: 0; border: 2px solid rgba(255,255,255,0.2); text-decoration: none;">
+            <div class="d-flex align-items-center">
+              <i class="fa fa-2x fa-phone-alt text-white me-3"></i>
+              <div>
+                <p class="text-white mb-1 small fw-bold text-uppercase" style="letter-spacing: 0.5px;">Rufen Sie für weitere Informationen an</p>
+                <h4 class="text-white mb-0 fw-bold" style="font-size: 1.5rem;">09443/916 999-0</h4>
+                <small class="text-white-50 d-block mt-1">Kostenlose Beratung</small>
+              </div>
             </div>
-            <div class="contact-details">
-              <p class="text-white mb-1 small fw-bold text-uppercase" style="letter-spacing: 0.5px;">Rufen Sie für weitere Informationen an</p>
-              <h4 class="text-white mb-0 fw-bold" style="font-size: 1.5rem;">09443/916 999-0</h4>
-              <small class="text-white-50 d-block mt-1">Kostenlose Beratung</small>
-            </div>
-            <div class="ms-auto">
-              <i class="fas fa-arrow-right text-white" style="font-size: 1.2rem; opacity: 0.7;"></i>
-            </div>
-          </div>
+            <i class="fas fa-arrow-right text-white" style="font-size: 1.2rem; opacity: 0.7;"></i>
+          </a>
         </div>
       </div>
       <div class="container-fluid px-0">
