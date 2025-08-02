@@ -203,8 +203,8 @@
       <div class="row g-5">
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
 
-          <h2 class="fs-4 mb-4">
-            Träumen Sie von Ihrem eigenen Pool im Garten? <br><span class="text-primary fs-1">Wir machen diesen Traum wahr!</span>
+          <h2 class="fs-2 mb-4">
+            Träumen Sie von Ihrem eigenen Pool im Garten? <br>Wir machen diesen Traum wahr!
           </h2>
           <p class="mb-4">
             Als Spezialist für hochwertigen Schwimmbadbau in privaten Anlagen gestalten wir individuelle Poollösungen - präzise geplant, professionell umgesetzt, langlebig und stilvoll.
